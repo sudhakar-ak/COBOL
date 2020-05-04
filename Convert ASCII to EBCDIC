@@ -1,0 +1,44 @@
+05  300-ASCII-TEXT-W.
+               10  FILLER.
+                   15  FILLER              PIC X(16)   VALUE
+                       X'202122232425262728292A2B2C2D2E2F'.
+                   15  FILLER              PIC X(08)   VALUE
+                       X'3A3B3C3D3E3F405F'.
+               10  FILLER                  PIC X(10)   VALUE
+                   X'30313233343536373839'.
+               10  FILLER.
+                   15  FILLER              PIC X(13)   VALUE
+                       X'4142434445464748494A4B4C4D'.
+                   15  FILLER              PIC X(13)   VALUE
+                       X'4E4F505152535455565758595A'.
+               10  FILLER.
+                   15  FILLER              PIC X(13)   VALUE
+                       X'6162636465666768696A6B6C6D'.
+                   15  FILLER              PIC X(13)   VALUE
+                       X'6E6F707172737475767778797A'.
+           05  300-ASCII-TEXT      REDEFINES 300-ASCII-TEXT-W
+                                           PIC X(86).
+           05  300-EBCDIC-TEXT-W.
+               10  FILLER.
+                   15  FILLER              PIC X(16)   VALUE
+                       X'405A7F7B5B6C7C7D4D5D5C4E6B604B61'.
+                   15  FILLER              PIC X(08)   VALUE
+                       X'7A5E4C7E6E6F7C6D'.
+               10  FILLER                  PIC X(10)   VALUE
+                   '0123456789'.
+               10  FILLER.
+                   15  FILLER              PIC X(13)   VALUE
+                       'ABCDEFGHIJKLM'.
+                   15  FILLER              PIC X(13)   VALUE
+                       'NOPQRSTUVWXYZ'.
+               10  FILLER.
+                   15  FILLER              PIC X(13)   VALUE
+
+                       X'81828384858687888991929394'.
+                   15  FILLER              PIC X(13)   VALUE
+                       X'9596979899A2A3A4A5A6A7A8A9'.
+           05  300-EBCDIC-TEXT     REDEFINES 300-EBCDIC-TEXT-W PIC X(86).
+
+PROCEDURE DICVISION.
+                  INSPECT 800-ASCII-INPUT       
+                  CONVERTING 300-ASCII-TEXT TO 300-EBCDIC-TEXT
